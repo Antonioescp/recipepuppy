@@ -9,9 +9,11 @@
 <div class="flex-container">
 	<% @recipes_found[:results].each do |recipe| %>
 		<div class='tile'>
+			<% unless recipe[:thumbnail].empty? %>
 			<div class="recipe_img">
 				<%= image_tag recipe[:thumbnail], width: '100px', height: '100px' %>
 			</div>
+			<% end %>
 			<div class="recipe-content">
 				<p class="recipe-title"><%= recipe[:title] %></p> <br>
 				<p>Ingredients: <%= recipe[:ingredients] %></p>
