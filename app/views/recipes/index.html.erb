@@ -1,0 +1,21 @@
+<h1>Here are your recipes</h1>
+
+<form>
+  <label for="recipe_name">Search</label>
+  <input type="text" name="recipe_name">
+  <input type="submit" value="Enviar consulta">
+</form>
+
+<div class="flex-container">
+	<% @recipes_found[:results].each do |recipe| %>
+		<div class='tile'>
+			<div class="recipe_img">
+				<%= image_tag recipe[:thumbnail], width: '100px', height: '100px' %>
+			</div>
+			<div class="recipe-content">
+				<p class="recipe-title"><%= recipe[:title] %></p> <br>
+				<p>Ingredients: <%= recipe[:ingredients] %></p>
+			</div>
+		</div>
+	<% end %>
+</div>
